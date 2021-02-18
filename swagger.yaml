@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
   version: "1.0.0"
-  title: "gpt2-recipe-maker"
-host: "master-gpt2-covid-article-ha-mulan.endpoint.ainize.ai"
+  title: "gpt2-philosophical"
+host: "master-gpt2-philosophical-ha-mulan.endpoint.ainize.ai"
 basePath: "/api/"
 schemes:
 - "https"
@@ -15,9 +15,23 @@ paths:
   /:
     get:
       tags:
-      - "make article related to covid19"
-      summary: "create article"
-      description: "please input name of covid19 artice"
+      - "generate philosophical script base on keyword"
+      summary: "generate philosophical script base on keyword"
+      description: 'please input keyword and you will find out philosophical script related to keyword.
+
+
+      This app is generate answer in text form.
+
+
+      How to use:
+
+
+        First, input keyword.
+
+        Second, wait for philosophical script related to keyword.
+
+
+      '
       produces:
       - "string"
       - "application/xml"
@@ -26,7 +40,7 @@ paths:
       - name: "keyword"
         type: 'string'
         in: "query"
-        description: "contents of artice"
+        description: "ex) type 'life'"
         required: true
         items:
           type: "string"
